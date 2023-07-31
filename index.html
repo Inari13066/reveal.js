@@ -1,40 +1,328 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-		<title>reveal.js</title>
+        <title>reveal.js</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+        <link rel="stylesheet" href="dist/reset.css" />
+        <link rel="stylesheet" href="dist/reveal.css" />
+        <link rel="stylesheet" href="dist/theme/whiteDana.css" />
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+        <!-- Theme used for syntax highlighted code -->
+        <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section data-auto-animate>
+                    <h2>Introduction to SVG</h2>
+                    <p>By Dana Karpova</p>
+                </section>
+                <section>
+                    <section data-auto-animate>
+                        <h2>Scalable Vector Graphics (SVG)</h2>
+                        <img
+                            data-auto-animate
+                            width="100"
+                            height="100"
+                            src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAADeElEQVR4nO1bPWgUQRReNUpEYqEgokVEEDTCXeb7ZuN5hVOopaDogZ1aRLDSQkynQZAkgqXg2VkY0ULBQsRWbAQ7BQmIjSiiROIPioInY2bhGHf3Nnfe7F4yD16Rm7n53n557817N7NB0EKEEDsAPCL5lWQjDwXwi+SlwLWEYbgewLu8HjxGLzslAMCoAZ4Jw3BYSrnVtQKYyo0EkhMG9Loz0H9tGDM2fHJOAoBJA1gP8ifgDoCzTXnhypIjIJi3yR0JKCABTklAQQlwRgIKTIATElBwArpOAnqAgK6SgB4hoGskoIcI6AoJKBABAB5kKZ111dpEwtRiIOBch53k8Z4mQAixp5NWXD9DTxPQrmibPQH0HtDwIQCfAybbTiTwSRB+F6DfBunrAPpCiL4SDHpMfClM3wvUfS9A3ws0fC+ALvYCYRhuJHkVwCuSszH6Vkq5T88tl8tb9DE7gPMpeBf0HCHEoMnk+839hNk0BfBkaGholdNdQAgxSPJNhp+kTur5Ukpl/v6slOq319Of6TE9R/8MZuG3wpgbGRlZ65QAkvfN2Gsp5VEAtDUMw53R/FqttoLke/OdgzFYh8zYB6VUn4V/N279SEul0oYY+7pHQKlUWmPu7ej/1u6s60VGkbwZgzVtDL7WCn8hWF0hoFwub47cz3a9NNH5IAqDSqWy2nL/OUPo3lb4uROglOozCUiPncq6XlIYxLl/Gn4WcZEDLpqx3yTv6blmvv68ZmfltDCIc/8E/OUAzkRYTZjHnBOglOqLDE/IzC+Hh4e3tQqDJPePwye5KwlPCLHJKQHWyc2EAawDuBXd6NIk2J5gh0GS+8fhm9Abj7CavKmhzwUL0wyV54uevyRIKQ+nhUGS+2fFLyQBWkjeNt8dD1LCICp+oopxsRCwjOQzY8Bpe9AKg1j3LzwB1Wp1IO58Xl+pbXLxn7ZhtoFJ7t+Mr/NKyn0A9wRUq9UBAB8z1OljSWtHYRCX/WPwW6pTApRS/SRfJBjzA8BTkkfS1jYZ/bHWOPfXIoQ4AOB7hmboud1g5Z0DchdPAL0H1H0I0OeAhk+C8LvAZNtbCfw2CF8H0BdC9JUgl2opzAK8ONmu6Bb7fxRCo4aAGSmlyOPV2Q5euZ3umIBKpbJOH3Bm7cmLqEKIE0EnQnI7yYckv+T9MAvUbwBukFyZ9oB/AAsqL1WOtcSdAAAAAElFTkSuQmCC"
+                        />
+                    </section>
+                    <section data-auto-animate>
+                        <h2>Key advantages</h2>
+                        <ul>
+                            <li>Scalability</li>
+                            <li>Resolution independence</li>
+                            <li>Small file size</li>
+                            <li>Easily accessible and modifiable</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section data-auto-animate><h2>SVG Basics</h2></section>
+                    <section data-auto-animate>
+                        <h2>Structure of SVG element</h2>
+                        <svg width="200" height="100">
+                            <rect width="60" height="60" x="100" y="20" fill="#F79D65"></rect>
+                            <path
+                                d="M 10,30
+                                   A 20,20 0,0,1 50,30
+                                   A 20,20 0,0,1 90,30
+                                   Q 90,60 50,90
+                                   Q 10,60 10,30 z"
+                            />
+                        </svg>
+                        <pre><code data-trim data-noescape width="auto"><script type="text/template">
+                            SVG element → <svg SVG attribute → width="200" 
+                                               SVG attribute → height="100">
+                                SVG element → <rect SVG attribute → width="60" 
+                                                    SVG attribute → height="60" 
+                                                    SVG attribute → x="100" 
+                                                    SVG attribute → y="20" 
+                                                    SVG attribute → fill="#F79D65"></rect>
+                                SVG element → <path
+                                    SVG attribute → d="M 10,30
+                                       A 20,20 0,0,1 50,30
+                                       A 20,20 0,0,1 90,30
+                                       Q 90,60 50,90
+                                       Q 10,60 10,30 z"/>
+                            </svg>
+                        </script></code></pre>
+                    </section>
+                    <section data-auto-animate>
+                        <h2>Basic shapes</h2>
+                        <ul>
+                            <li>
+                                rectangles
+                                <svg width="100" height="100">
+                                    <rect width="60" height="60" x="20" y="40" fill="#F79D65"></rect>
+                                </svg>
+                                <br />
+                                <pre><code data-trim data-noescape width="auto"><script type="text/template">
+                                        <rect width="60" height="60" x="20" y="40" fill="#F79D65"></rect>
+                                    </script></code></pre>
+                            </li>
+                            <li>
+                                circles
+                                <svg width="100" height="100">
+                                    <circle cx="50" cy="60" r="40" fill="#F79D65"></circle>
+                                </svg>
+                                <pre><code data-trim data-noescape width="auto"><script type="text/template">
+                                        <circle cx="50" cy="60" r="40" fill="#F79D65"></circle>
+                                    </script></code></pre>
+                            </li>
+                        </ul>
+                    </section>
+                    <section data-auto-animate>
+                        <ul>
+                            <li>
+                                ellipses
+                                <svg width="100" height="100">
+                                    <ellipse cx="50" cy="80" rx="45" ry="20" fill="#F79D65"></ellipse>
+                                </svg>
+                                <pre><code data-trim data-noescape width="auto"><script type="text/template">
+                                        <ellipse cx="50" cy="80" rx="45" ry="20" fill="#F79D65"></ellipse>
+                                    </script></code></pre>
+                            </li>
+                            <li>
+                                lines
+                                <svg width="100" height="100">
+                                    <line x1="0" y1="40" x2="100" y2="100" stroke="#F79D65" stroke-width="4"></line>
+                                </svg>
+                                <pre><code data-trim data-noescape width="auto"><script type="text/template">
+                                        <line x1="0" y1="40" x2="100" y2="100" stroke="#F79D65" stroke-width="4"></line>
+                                    </script></code></pre>
+                            </li>
+                            <li>
+                                polygons
+                                <svg width="100" height="100">
+                                    <polygon points="50,40 85,95 70, 90 40,100" fill="#F79D65"></polygon>
+                                </svg>
+                                <pre><code data-trim data-noescape width="auto"><script type="text/template">
+                                        <polygon points="50,40 85,95 70,90 40,100" fill="#F79D65"></polygon>
+                                    </script></code></pre>
+                            </li>
+                        </ul>
+                    </section>
+                    <section data-auto-animate>
+                        <h2>Creating Complex Shapes and Paths</h2>
+                        <svg width="100" height="100">
+                            <path
+                                d="M 10,30
+                                   A 20,20 0,0,1 50,30
+                                   A 20,20 0,0,1 90,30
+                                   Q 90,60 50,90
+                                   Q 10,60 10,30 z"
+                            />
+                        </svg>
+                        <svg viewBox="0 0 40 40" width="100" height="100">
+                            <path
+                                d="M 10,30
+                                   A 20,20 0,0,1 50,30
+                                   A 20,20 0,0,1 90,30
+                                   Q 90,60 50,90
+                                   Q 10,60 10,30 z"
+                            />
+                        </svg>
+                        <pre><code data-trim data-noescape width="auto"><script type="text/template">
+                            <svg viewBox="50 0 100 100" width="100" height="100" > 
+                                <path
+                                    d="M 10,30
+                                       A 20,20 0,0,1 50,30
+                                       A 20,20 0,0,1 90,30
+                                       Q 90,60 50,90
+                                       Q 10,60 10,30 z"
+                                />
+                            </svg>
+                        </script></code></pre>
+                    </section>
+                </section>
+                <section>
+                    <section data-auto-animate><h2>Styling SVG Graphics</h2></section>
+                    <section data-auto-animate>
+                        <h2>How to apply CSS styles to SVG</h2>
+                        <ul>
+                            <li>
+                                fill
+                                <svg width="100" height="100">
+                                    <circle cx="50" cy="50" r="40" fill="#F79D65"></circle>
+                                </svg>
+                                <pre><code data-trim data-noescape width="auto"><script type="text/template">
+                                    <circle fill="#F79D65"></circle>
+                                </script></code></pre>
+                            </li>
+                            <li>
+                                stroke
+                                <svg width="100" height="100">
+                                    <circle cx="50" cy="50" r="40" fill="#F79D65" stroke="#000"></circle>
+                                </svg>
+                                <pre><code data-trim data-noescape width="auto"><script type="text/template">
+                                <circle fill="#F79D65" stroke="#000"></circle>
+                            </script></code></pre>
+                            </li>
+                            <li>
+                                stroke-width
+                                <svg width="100" height="100">
+                                    <circle
+                                        cx="50"
+                                        cy="50"
+                                        r="40"
+                                        fill="#F79D65"
+                                        stroke="#000"
+                                        stroke-width="3"
+                                    ></circle>
+                                </svg>
+                                <pre><code data-trim data-noescape width="auto"><script type="text/template">
+                                <circle fill="#F79D65" stroke="#000" stroke-width="3"></circle>
+                            </script></code></pre>
+                            </li>
+                        </ul>
+                    </section>
+                    <section data-auto-animate>
+                        <h2>Linear Gradient</h2>
+                        <svg width="200" height="200">
+                            <defs>
+                                <linearGradient id="linear" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color: #662c91; stop-opacity: 1" />
+                                    <stop offset="100%" style="stop-color: #f79d65; stop-opacity: 1" />
+                                </linearGradient>
+                            </defs>
+                            <circle cx="100" cy="100" r="90" fill="url(#linear)"></circle>
+                        </svg>
+                        <pre><code data-trim data-noescape width="auto"><script type="text/template">
+                            <defs>
+                                <linearGradient id="linear" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color: #662c91; stop-opacity: 1"/>
+                                    <stop offset="100%" style="stop-color: #f79d65; stop-opacity: 1"/>
+                                </linearGradient>
+                            </defs>
+                            <circle fill="url(#linear)"></circle>
+                        </script></code></pre>
+                    </section>
+                    <section data-auto-animate>
+                        <h2>Radial Gradient</h2>
+                        <svg width="200" height="200">
+                            <defs>
+                                <radialGradient id="radial" cx="50%" cy="50%" r="60%" fx="50%" fy="50%">
+                                    <stop offset="0%" style="stop-color: #662c91; stop-opacity: 1" />
+                                    <stop offset="100%" style="stop-color: #f79d65; stop-opacity: 1" />
+                                </radialGradient>
+                            </defs>
+                            <circle cx="100" cy="100" r="90" fill="url(#radial)"></circle>
+                            <pre>
+                                <code data-trim data-noescape width="auto">
+                                    <script type="text/template">
+                                        <defs> <radialGradient id="radial" cx="50%" cy="50%" r="60%" fx="50%" fy="50%">
+                                        <stop offset="0%" style="stop-color: #662c91; stop-opacity: 1" /> <stop
+                                        offset="100%" style="stop-color: #f79d65; stop-opacity: 1" /> </radialGradient>
+                                        </defs> <circle fill="url(#radial)"></circle>
+                                    </script>
+                                </code>
+                            </pre>
+                        </svg>
+                    </section>
+                </section>
+                <section data-auto-animate>
+                    <h2>Interactivity and animation with SVG</h2>
+                    <svg id="animation-test" width="100" height="100" fill="#f79d65" style="margin: 1em">
+                        <path
+                            d="M 10,30
+                               A 20,20 0,0,1 50,30
+                               A 20,20 0,0,1 90,30
+                               Q 90,60 50,90
+                               Q 10,60 10,30 z"
+                        />
+                    </svg>
+                    <pre
+                        style="display: inline-block"
+                    ><code data-trim data-noescape width="auto"><script type="text/template">
+                        document.querySelector("#animation-test")
+                        .addEventListener("click", (e) => {
+                            e.currentTarget.getAttribute("fill") == "#f79d65"
+                                ? e.currentTarget.setAttribute("fill", "#662c91")
+                                : e.currentTarget.setAttribute("fill", "#f79d65");
+                        });
+                    </script></code></pre>
+                    <br />
+                    <svg width="110" height="110" fill="#662c91" style="margin: 1em">
+                        <path
+                            d="M 10,30
+                               A 20,20 0,0,1 50,30
+                               A 20,20 0,0,1 90,30
+                               Q 90,60 50,90
+                               Q 10,60 10,30 z"
+                        />
+                        <animate
+                            attributeName="viewBox"
+                            values="0 0 100 100;0 0 90 90;0 0 100 100"
+                            dur="1s"
+                            repeatCount="indefinite"
+                        />
+                    </svg>
+                    <pre
+                        style="display: inline-block"
+                    ><code data-trim data-noescape width="auto"><script type="text/template">
+                        <animate
+                            attributeName="viewBox"
+                            values="0 0 100 100;0 0 90 90;0 0 100 100"
+                            dur="1s"
+                            repeatCount="indefinite"
+                        />
+                    </script></code></pre>
+                </section>
+                <section data-auto-animate><h2>Cross-Browser Support</h2></section>
+                <section data-auto-animate>
+                    <h2>Conclusion</h2>
+                    <img
+                        src="https://tenor.com/view/heart-shape-heart-sign-jason-momoa-love-heart-hands-gif-24999347.gif"
+                        alt="Thank you for watching"
+                    />
+                </section>
+            </div>
+        </div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
-
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+        <script src="dist/reveal.js"></script>
+        <script src="plugin/notes/notes.js"></script>
+        <script src="plugin/markdown/markdown.js"></script>
+        <script src="plugin/highlight/highlight.js"></script>
+        <script>
+            // More info about initialization & config:
+            // - https://revealjs.com/initialization/
+            // - https://revealjs.com/config/
+            Reveal.initialize({
+                hash: true,
+                autoAnimate: true,
+                transition: "convex",
+                // Learn about plugins: https://revealjs.com/plugins/
+                plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+            });
+            document.querySelector("#animation-test").addEventListener("click", (e) => {
+                e.currentTarget.getAttribute("fill") == "#f79d65"
+                    ? e.currentTarget.setAttribute("fill", "#662c91")
+                    : e.currentTarget.setAttribute("fill", "#f79d65");
+            });
+        </script>
+    </body>
 </html>
